@@ -40,7 +40,7 @@ let myChart = new Chart(ctx, {
 
 function addData0(chart, label, num){//イメージ chart.data.datasets[data][n] = num;
     //テスト用関数
-    chart.data.labels.push(label);
+    // chart.data.labels.push(label);
     // chart.data.datasets.data.push(num);
     chart.data.datasets.forEach((dataset) => {
         dataset.data.push(num);
@@ -50,6 +50,7 @@ function addData0(chart, label, num){//イメージ chart.data.datasets[data][n]
     chart.update();
 
     //ここからコンソールテスト
+    
 
     chart.data.datasets.forEach((dataset) => {
         console.log(dataset);
@@ -74,11 +75,17 @@ function addData0(chart, label, num){//イメージ chart.data.datasets[data][n]
         console.log(dataset.data[0]);
     });
 
+    Object.keys(chart).forEach(key => {
+        console.log(`key: ${key}`)
+    })
+
     Object.keys(chart.data).forEach(key => {
         console.log(`key: ${key}`)
     })
     // key: labels
     // key: datasets
+
+    
 
     Object.keys(chart.data.datasets).forEach(key => {
         console.log(`key: ${key}`)
